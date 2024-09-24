@@ -1,0 +1,47 @@
+<%- include('partials/_header') %>
+    <section class="header2">
+        <%- include('partials/_navbar') %>
+        
+    <div class="text-box">
+        <h1>Contact Us</h1>
+    </div>
+    </section>
+
+    <section class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d877.6117663554608!2d-0.10877299309942096!3d51.526773918904425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x48761b45a015c929%3A0xd8cb6e30f2cf93a4!2sEC1R%204RE%2C%20Rosebery%20Ave%2C%20London!3m2!1d51.5269063!2d-0.108748!5e0!3m2!1sen!2suk!4v1639781669009!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+ 
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                    <i class="fa fa-home"></i>
+                    <span><h4> <% contact.address %> </h4>
+                    <p>Address of Main office</p></span>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <span><h4> <% contact.telephone %> </h4>
+                    <p>Contact Phone Number</p></span>
+                </div>
+                <div>
+                    <i class="fa fa-envelope-o"></i>
+                    <span><h4> <% contact.email %> </h4>
+                    <p>Email Contact</p></span>
+                </div>
+            </div>
+            <div class="contact-form">
+            <form action="/send_data">
+                <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+            
+                <button type="submit" class="btn1">Submit</button>
+              </form>
+            </div>
+        </div>
+    </section>
+    <%- include('partials/_footer') %>
+
+
+    
