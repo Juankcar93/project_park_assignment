@@ -16,31 +16,66 @@
             <div class="contact-col">
                 <div>
                     <i class="fa fa-home"></i>
-                    <span><h4> <% contact.address %> </h4>
+                    <span><h4> <%- contact.address %> </h4>
                     <p>Address of Main office</p></span>
                 </div>
                 <div>
                     <i class="fa fa-phone"></i>
-                    <span><h4> <% contact.telephone %> </h4>
+                    <span><h4> <%- contact.telephone %> </h4>
                     <p>Contact Phone Number</p></span>
                 </div>
                 <div>
                     <i class="fa fa-envelope-o"></i>
-                    <span><h4> <% contact.email %> </h4>
+                    <span><h4> <%- contact.email %> </h4>
                     <p>Email Contact</p></span>
                 </div>
             </div>
             <div class="contact-form">
-            <form action="/send_data">
+            <div id="responseMessage">
+            </div>
+            <form id="contactForm">
                 <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
                 <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
-                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
+                <textarea id="message" name="message" placeholder="Write something.." style="height:200px" required></textarea>
             
                 <button type="submit" class="btn1">Submit</button>
               </form>
             </div>
         </div>
     </section>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit',function(e){
+            e.preventDefault();
+            const formData={
+                first_name:document.getElementById('fname').value,
+                last_name:document.getElementById('lname').value,
+                message:document.getElementById('message').value 
+
+            }
+            fetch('/contact', {
+                method:'POST',
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify(formData)
+                
+            })
+            .then(response=>response.json())
+            .then(data=>{
+                const responseMessage=document.getElementById("responseMessage")
+                if (data.success){
+                    responseMessage.innerHTML=data.message
+                    document.getElementById("contactForm").reset()
+                }else{
+                    console.log(data)
+                    responseMessage.innerHTML="fail to saved contact"
+                }
+            })
+            .catch(
+                error=>{
+                    document.getElementById("responseMessage").innerHTML='Error: '+error.messages
+                }
+            );
+        });
+    </script>
     <%- include('partials/_footer') %>
 
 

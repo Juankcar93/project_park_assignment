@@ -12,55 +12,47 @@
         <h1>Ongoing Festival Events</h1>
         <p>These are some pictures of our festival Events</p>
         <div class="row">
-            <div class="col events">
-                <img src="images/event1.jpeg" alt="">
-                <div class="layer">
-                    <h3>Supernight</h3>
-                </div>   
-            </div>
-
-            <div class="col events">
-                <img src="images/event2.jpg" alt="">  
-                <div class="layer">
-                    <h3>Brightnight</h3>
-                </div>  
-            </div>
-
-            <div class="col events">
-                <img src="images/event3.jpg" alt=""> 
-                <div class="layer">
-                    <h3>Greatnight</h3>
-                </div>   
-            </div>
+            <% eventData.forEach(event => { %>
+              
+                <div class="col events">
+                    <img src="<%= event.image_url %>" alt="">
+                    <div class="layer">
+                        <h3><%= event.title %></h3>
+                    </div>   
+                </div>
+            <% }); %>
+            
         </div>
 
     </section>
 
     <section class="pictures events-details">
         <div class="row">
-            <div class="col">
-                <div class="details">
-                    <h3>Supernight</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur odio laudantium nam culpa vero? Libero, praesentium est totam, quisquam illum, at consequatur ipsum vero laboriosam incidunt pariatur accusamus odit itaque?</p>
-                    <button>Click for more details</button>
-                </div>   
-            </div>
+            <% eventData.forEach(event => { %>
+                <div class="col">
+                    <div class="details">
+                        <h3><%= event.title %></h3>
+                        <p><%= event.description %></p>
+                       
+                                <form class="eventComments">
+                                    <select name="rating" id="<%= event.event_id %>">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
 
-            <div class="col">
-                <div class="details">
-                    <h3>Supernight</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur odio laudantium nam culpa vero? Libero, praesentium est totam, quisquam illum, at consequatur ipsum vero laboriosam incidunt pariatur accusamus odit itaque?</p>
-                    <button>Click for more details</button>
-                </div>   
-            </div>
+                                    </select>
+                                    <input type="text" name="name">
+                                    <button type="submit">submit</button>
 
-            <div class="col">
-                <div class="details">
-                    <h3>Supernight</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur odio laudantium nam culpa vero? Libero, praesentium est totam, quisquam illum, at consequatur ipsum vero laboriosam incidunt pariatur accusamus odit itaque?</p>
-                    <button>Click for more details</button>
-                </div>   
-            </div>
+                                </form>	
+                            
+                        
+                    </div>   
+                </div>
+            <% }); %>
+            
         </div>
 
     </section>

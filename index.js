@@ -1,9 +1,12 @@
 // server.js
 const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
 //const { title } = require('process');
 const { rootCertificates } = require('tls');
-const DBHandler= require('./database')
+const DBHandler= require('./database');
+const { title } = require('process');
+const { sign } = require('crypto');
 const app = express();
 const PORT = 5000;
 const db= new DBHandler()
@@ -12,7 +15,9 @@ app.use(express.json());  //this is to inform nodejs application that the data f
 
 app.set('view engine', 'ejs');   //this will set the view engine you are using
 app.use(express.static(__dirname+'/public'));
-
+// Middleware to parse JSON and form data
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Serve static files (HTML, CSS, JS)
 app.use(express.static(path.join(__dirname, 'public')));
@@ -29,17 +34,36 @@ app.listen(PORT, () => {
 });
 
 // For contact page
-app.get('/contact', (req, res) => {
+app.get('/contact', async (req, res) => {
     //res.sendFile(path.join(__dirname, 'public', 'contact.html'));
-    let rows=db.getContact()
-    console.log(rows)
-    res.render('contact',{title:"Contact",contact:rows})
+    let rows= await db.getContact()
+    //console.log(rows)
+    res.render('contact',{title:"Contact",contact:rows[0]})
+});
+
+app.post('/contact', async (req, res) => {
+   try{
+    console.log(req.body)
+    const {first_name,last_name,message}= req.body;
+    console.log([first_name,last_name,message])
+    await db.insertContactInformation(first_name,last_name,message)
+    res.status(200).json({success:true,message:"Contact saved successfully",title:"contacts"})
+   }catch(error){
+    res.status(500).json({success:false,message:"Failed to save contact",error:error.message}) 
+   }
 });
 
 // For events page
-app.get('/events', (req, res) => {
+app.get('/events', async (req, res) => {
     //res.sendFile(path.join(__dirname, 'public', 'events.html'));
-    res.render('events',{title:"Events"})
+    try{
+        const eventData=await db.getEvents()
+        //res.status(200).json({success:true,message:"events retrive successfully",title:"Events",eventData:eventData})
+        res.render('events',{title:"Events",eventData:eventData})
+       }catch(error){
+        res.status(500).json({success:false,message:"Failed to retive events",error:error.message}) 
+       }
+    
 });
 
 // For faq page
