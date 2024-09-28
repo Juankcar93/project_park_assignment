@@ -49,5 +49,22 @@ class DBHandler {
             })
         })   
     }
+    getAboutUs(){
+        const query="SELECT * FROM about_us"
+        return new Promise((resolve,reject)=>{
+            db.all(query,[],(err,rows)=>{
+                if(err){
+                    console.error('Error fetching about us data:', err.message);
+                    reject(err.message);
+                }
+                else {
+                    //console.log(rows)
+                    resolve(rows)
+
+                }
+            })
+        })
+    
+    }
 }
 module.exports=DBHandler

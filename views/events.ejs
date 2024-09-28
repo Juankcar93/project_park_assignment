@@ -4,18 +4,19 @@
         <%- include('partials/_navbar') %>
    
     <div class="text-box">
-        <h1>Events Coming Up</h1>
+        <h1>Our weekly Events Coming Up</h1>
     </div>
     </section>
 
        <section class="pictures">
-        <h1>Ongoing Festival Events</h1>
-        <p>These are some pictures of our festival Events</p>
+        <h1>What's going on in Camelot Park</h1>
+        <p>Check it up pictures of our  recently and futher events in Camelot</p>
         <div class="row">
             <% eventData.forEach(event => { %>
+                
               
                 <div class="col events">
-                    <img src="<%= event.image_url %>" alt="">
+                    <img src="<%= event.image_url %>" alt="<%= event.alt %>">
                     <div class="layer">
                         <h3><%= event.title %></h3>
                     </div>   
@@ -34,19 +35,7 @@
                         <h3><%= event.title %></h3>
                         <p><%= event.description %></p>
                        
-                                <form class="eventComments">
-                                    <select name="rating" id="<%= event.event_id %>">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-
-                                    </select>
-                                    <input type="text" name="name">
-                                    <button type="submit">submit</button>
-
-                                </form>	
+                               
                             
                         
                     </div>   

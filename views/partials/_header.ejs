@@ -8,5 +8,200 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+
+        /* General Reset */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+
+        /* Main Section Styling */
+
+        .about-section {
+
+            width: 80%;
+
+            margin: auto;
+
+            padding: 50px 0;
+
+            color: white;
+
+        }
+
+
+
+        .about-header {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+
+        }
+
+
+
+        .about-header h1 {
+
+            font-size: 40px;
+
+            font-weight: bold;
+
+            color: lightblue;
+
+        }
+
+
+
+        .about-table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            margin: 20px 0;
+
+            background-color: rgba(0, 0, 0, 0.7);
+
+        }
+
+
+
+        .about-table th,
+
+        .about-table td {
+
+            padding: 15px;
+
+            text-align: left;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+        }
+
+
+
+        .about-table th {
+
+            background-color: rgb(35, 55, 65);
+
+            color: lightgreen;
+
+            font-size: 18px;
+
+        }
+
+
+
+        .about-table td {
+
+            color: white;
+
+            font-size: 16px;
+
+        }
+
+
+
+        .about-table td span {
+
+            font-weight: bold;
+
+            color: lightyellow;
+
+        }
+
+
+
+        /* Responsive Design */
+
+        @media (max-width: 700px) {
+
+
+
+            .about-table,
+
+            .about-table tbody,
+
+            .about-table tr,
+
+            .about-table td,
+
+            .about-table th {
+
+                display: block;
+
+                width: 100%;
+
+            }
+
+
+
+            .about-table tr {
+
+                margin-bottom: 20px;
+
+            }
+
+
+
+            .about-table td,
+
+            .about-table th {
+
+                text-align: left;
+
+                padding: 10px;
+
+                border: none;
+
+                position: relative;
+
+                padding-left: 50%;
+
+            }
+
+
+
+            .about-table td:before,
+
+            .about-table th:before {
+
+                content: attr(data-label);
+
+                position: absolute;
+
+                left: 0;
+
+                width: 45%;
+
+                padding-left: 15px;
+
+                font-weight: bold;
+
+                color: #00aaff;
+
+            }
+
+
+
+            .about-header h1 {
+
+                font-size: 30px;
+
+            }
+
+        }
+
+    </style>
 </head>
 <body>

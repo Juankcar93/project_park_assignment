@@ -7,17 +7,87 @@
 </div>
 </section>
 
-<section  class="pictures events-details">
+<section class="about-section">
 
-    <main>
-       
-        <div class="details">
-            <h2>Greatnight</h2>
-            <p >These are some pictures of our festival Events</p>
-        </div>   
-         </main>
+    <div class="about-header">
 
+        <h1>Our Vision, Mission & Purpose</h1>
+
+    </div>
+
+    <table class="about-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Aspect</th>
+
+                <th>Description</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+            
+            <tr>
+
+                <td data-label="Aspect">Vision</td>
+
+                <td data-label="Description"><%- aboutData.vision %>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td data-label="Aspect">Mission</td>
+
+                <td data-label="Description"><%- aboutData.mission %></td>
+
+            </tr>
+
+            <tr>
+
+                <td data-label="Aspect">History</td>
+
+                <td data-label="Description"><%- aboutData.history %></td>
+
+            </tr>
+            <tr>
+
+                <td data-label="Aspect">Summary</td>
+
+                <td data-label="Description"><%- aboutData.summary %></td>
+
+            </tr>
+
+            <tr>
+
+                <td data-label="Aspect">Open Time</td>
+
+                <td data-label="Description"><span>Monday to Friday:</span> 9:00 AM - 6:00 PM</td>
+
+            </tr>
+
+            <tr>
+
+                <td data-label="Aspect">Close Time</td>
+
+                <td data-label="Description"><span>Saturday & Sunday:</span> Closed</td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
 
 </section>
+
 <%- include('partials/_footer') %>
+
+
+
 

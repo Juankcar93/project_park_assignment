@@ -72,15 +72,17 @@ app.get('/faq', (req, res) => {
     res.render("faq",{title:"FAQ"})
 });
 
-// For guests page
-app.get('/guests', (req, res) => {
-    //res.sendFile(path.join(__dirname, 'public', 'guests.html'));
-    res.render('guests',{title:"Guets"})
+// For Attractions page
+app.get('/attractions', (req, res) => {
+    //res.sendFile(path.join(__dirname, 'public', 'attractions.html'));
+    res.render('attractions',{title:"Attractions"})
 });
 
 // For about page
-app.get('/about', (req, res) => {
+app.get('/about', async (req, res) => {
     //res.sendFile(path.join(__dirname, 'public', 'guests.html'));
-    res.render('about',{title:"About"})
+    //res.render('about',{title:"About"})
+    let rows= await db.getAboutUs()
+    res.render('about',{title:"About",aboutData:rows[0]})
 });
 
