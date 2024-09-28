@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Assuming you're linking your styles here -->
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Main Section Styling */
+        .about-section {
+            width: 80%;
+            margin: auto;
+            padding: 50px 0;
+            color: white;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .about-header h1 {
+            font-size: 40px;
+            font-weight: bold;
+            color: lightblue;
+        }
+
+        .about-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .about-table th,
+        .about-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .about-table th {
+            background-color: rgb(35, 55, 65);
+            color: lightgreen;
+            font-size: 18px;
+        }
+
+        .about-table td {
+            color: white;
+            font-size: 16px;
+        }
+
+        .about-table td span {
+            font-weight: bold;
+            color: lightyellow;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 700px) {
+
+            .about-table,
+            .about-table tbody,
+            .about-table tr,
+            .about-table td,
+            .about-table th {
+                display: block;
+                width: 100%;
+            }
+
+            .about-table tr {
+                margin-bottom: 20px;
+            }
+
+            .about-table td,
+            .about-table th {
+                text-align: left;
+                padding: 10px;
+                border: none;
+                position: relative;
+                padding-left: 50%;
+            }
+
+            .about-table td:before,
+            .about-table th:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 45%;
+                padding-left: 15px;
+                font-weight: bold;
+                color: #00aaff;
+            }
+
+            .about-header h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+    <title>About Us</title>
+</head>
+
+<body>
+    <!-- Navbar section -->
+    <section class="header2">
+        <nav>
+            <a href="index.html"><img src="images/logo.png" height="160px" width="160px" /></a>
+            <div class="menu" id="menu-block">
+                <i class="fa fa-times" onclick="hide()"></i>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/guests">Guests</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="show()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>About Us</h1>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <div class="about-header">
+            <h1>Our Vision, Mission & Purpose</h1>
+        </div>
+        <table class="about-table">
+            <thead>
+                <tr>
+                    <th>Aspect</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Aspect">Vision</td>
+                    <td data-label="Description">To become the leading provider of innovative solutions in the industry.
+                    </td>
+                </tr>
+                <tr>
+                    <td data-label="Aspect">Mission</td>
+                    <td data-label="Description">Our mission is to deliver high-quality products and services that
+                        create value and consistent competitive advantage for our clients.</td>
+                </tr>
+                <tr>
+                    <td data-label="Aspect">Purpose</td>
+                    <td data-label="Description">We are committed to helping our customers achieve their business
+                        objectives by providing innovative, best-in-class solutions.</td>
+                </tr>
+                <tr>
+                    <td data-label="Aspect">Open Time</td>
+                    <td data-label="Description"><span>Monday to Friday:</span> 9:00 AM - 6:00 PM</td>
+                </tr>
+                <tr>
+                    <td data-label="Aspect">Close Time</td>
+                    <td data-label="Description"><span>Saturday & Sunday:</span> Closed</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer">
+        <h1>About Us</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit dolorum aut commodi laudantium aspernatur
+            quibusdam accusantium vero hic, quaerat omnis libero! Quas soluta vitae, nam excepturi adipisci voluptatum
+            enim possimus?</p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-linkedin"></i>
+            <i class="fa fa-instagram"></i>
+        </div>
+        <p>Made by Amjad Alam just for Tutorial</p>
+    </section>
+
+    <script>
+        var b = document.getElementById("menu-block");
+        function hide() {
+            b.style.right = "-200px";
+            b.style.transition = "1s";
+        }
+        function show() {
+            b.style.right = "0";
+            b.style.transition = "1s";
+        }
+    </script>
+</body>
+
+</html>
