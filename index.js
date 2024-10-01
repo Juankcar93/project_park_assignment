@@ -2,13 +2,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+require("dotenv").config()
 //const { title } = require('process');
 const { rootCertificates } = require('tls');
 const DBHandler= require('./database');
 const { title } = require('process');
 const { sign } = require('crypto');
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const db= new DBHandler()
 app.use(express.urlencoded({extended: true}));  
 app.use(express.json());  //this is to inform nodejs application that the data format is json

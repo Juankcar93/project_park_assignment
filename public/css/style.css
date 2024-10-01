@@ -19,9 +19,7 @@ nav {
   align-items: center;
 }
 
-nav#main-nav {
-  position: sticky;
-}
+
 
 .menu{
   flex: 1;
@@ -77,6 +75,7 @@ div#menu-block{
 
 .text-box h1 {
   font-size: 62px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .text-box p{
@@ -91,7 +90,7 @@ div#menu-block{
   border:1px solid rgba(51, 45, 45, 0.7);
   padding: 12px 34px;
   font-size: 35px;
-  background: transparent;
+  background-color: rgb(8, 8, 8);
   position: relative;
   cursor:pointer;
   margin-bottom:20px;
@@ -304,7 +303,7 @@ nav .fa {
 .cta{
   margin:100px auto;
   width: 80%;
-  background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(images/bottom_img.jpg);
+  background-color: yellow;
   background-position: center;
   background-size: cover;
   position: relative;
@@ -314,8 +313,8 @@ nav .fa {
 }
 
 .cta h1{
-  color:antiquewhite;
-  margin-bottom: 50px;
+  color:black;
+  margin-bottom: 65px;
   padding: 0;
 }
 
@@ -324,7 +323,7 @@ nav .fa {
   width: 100%;
   text-align: center;
   padding: 30px 0;
-  background-color: dimgray;
+  background-color: yellow;
 }
 
 .footer h1{
@@ -385,7 +384,7 @@ nav .fa {
   padding:0px;
 }
 
-.contact-col div span{
+.contact-col div h4,p{
   font-size: 20px;
 }
 
@@ -414,7 +413,7 @@ nav .fa {
   text-align: center;
 }
 
-.faq main {
+main .faq {
   width:80%;
   margin: 0 auto;
 }

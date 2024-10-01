@@ -1,5 +1,7 @@
 const sqlite3 = require('sqlite3')
-const db=new sqlite3.Database('./database/park.db')
+require("dotenv").config()
+const dbUrl=process.env.DATABASE_URL
+const db=new sqlite3.Database(dbUrl)
 class DBHandler {
     getContact(){
         const query="SELECT * FROM contact"
