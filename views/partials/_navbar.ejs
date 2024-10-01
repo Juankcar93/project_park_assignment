@@ -1,12 +1,15 @@
 
 <nav id="main-nav">
 
-    <a href="index.html"> <img src="images/logo.png" heigth="190px" width="175px" /> </a>
+    <a href="/"> <img class="logoClass" src="images/Camelot_logo.webp" heigth="200px" width="195px" /> </a>
     <div class="menu" id="menu-block">
         <i class="fa fa-times" onclick="hide()"></i>
        <ul>
          <li><a href="/">Home</a></li>  
          <li><a href="/about">About Us</a></li> 
+         <% if (typeof isIndexPage !== 'undefined' && isIndexPage) { %>
+          <li><a href="#themes">Themes</a></li> 
+        <% } %>
          <li><a href="/events">Events</a></li> 
          <li><a href="/attractions">Attractions</a></li> 
          <li><a href="/faq">FAQ</a></li> 

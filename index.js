@@ -25,8 +25,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Serve the index.html file when visiting the root of the site
 app.get('/', (req, res) => {
     //res.sendFile(path.join(__dirname, 'public', 'index.html'));
-    res.render("index",{title:"Welcome"})
+    res.render("index",{title:"Welcome ",isIndexPage: true})
 });
+
 
 // Start the server
 app.listen(PORT, () => {

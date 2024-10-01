@@ -6,7 +6,7 @@
 .header {
   min-height: 100vh;
   width: 100%;
-  background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)),url(../images/background.jpg);
+  background-image: url(../images/background.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -27,9 +27,12 @@ nav#main-nav {
   flex: 1;
   text-align: right;
   top:0px;
-  right:0px;
+  right:10px;
 }
-
+div#menu-block{
+  position: fixed;
+  z-index: 20;
+}
 .menu ul li{
   list-style: none;
   display: inline-block;
@@ -38,10 +41,10 @@ nav#main-nav {
 }
 
 .menu ul li a{
-  color:rgba(8, 245, 28, 0.7);
+  color:red;
   font-size: 20px;
   text-decoration: none;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family:Impact, Haettenschweiler, 'elementor Narrow Bold', sans-serif;
 
 }
 
@@ -63,11 +66,11 @@ nav#main-nav {
 
 .text-box{
   width:90%;
-  color:antiquewhite;
+  color:white;
   position:absolute;
-  top:50%;
-  left:50%;
-  text-align: center;
+  top: 50%;
+  left:58%;
+  text-align: left;
   transform: translate(-50%, -50%);
 
 }
@@ -84,8 +87,8 @@ nav#main-nav {
 .btn1{
   display: inline-block;
   text-decoration: none;
-  color:burlywood;
-  border:1px solid rgba(85, 82, 231, 0.7);
+  color:rgb(249, 247, 244);
+  border:1px solid rgba(51, 45, 45, 0.7);
   padding: 12px 34px;
   font-size: 35px;
   background: transparent;
@@ -95,8 +98,8 @@ nav#main-nav {
 }
 
 .btn1:hover {
-  border: rgba(8, 6, 163, 0.7);
-  background-color: blue;
+  border: rgba(242, 242, 248, 0.7);
+  background-color: rgb(243, 8, 8);
   transition: 1s;
 }
 
@@ -184,7 +187,11 @@ nav .fa {
   margin: 10px 0;
 
 }
-
+.col h2 {
+  text-align: center;
+  font-weight: 600;
+  margin: 10px 0;
+}
 .col:hover{
   box-shadow: 0 0 20px 0 rgba(0,0,0, 0.5);
 }
@@ -228,7 +235,14 @@ nav .fa {
   opacity: 0;
   transition: 0.5s;
 }
+.layer h2{
+  position: absolute;
+  bottom: 75%;
+  left: 28%;
+  background-color: dimgray;
+  color: aliceblue;
 
+}
 .layer:hover h3{
   bottom:49%;
   opacity: 1;
@@ -245,7 +259,7 @@ nav .fa {
 }
 
 .layer:hover{
-  background-color: rgba(247, 7, 27, 0.7);
+  background-color: rgba(192, 247, 26, 0.7);
 }
 
 .testimonials{
@@ -328,7 +342,7 @@ nav .fa {
 .header2 {
   min-height: 40vh;
   width: 100%;
-  background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(images/bottom_img.jpg);
+  background-image: linear-gradient(rgb(4, 9, 30, 0.7), rgb(4, 9, 30, 0.7)), url(../images/background2.webp);
   background-position: center;
   background-size: cover;
   position: relative;
